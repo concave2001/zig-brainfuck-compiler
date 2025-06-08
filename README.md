@@ -8,6 +8,9 @@ Uses nasm to compile the assembly code into an executable file.
 It uses 30.000 cells, each being 1 byte (8 bits) large.
 (Support for making these parameters more configurable will be added soonTM (maybe).)
 
+The values in each cell are unsigned, go from 0 to 255, and wrap around.
+Navigation between cells also wraps around. (Like a ring!)
+
 Dependencies:
 * zig compiler
 * gcc
