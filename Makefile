@@ -1,7 +1,13 @@
 build: bf_compiler.zig
-	zig build-exe -static -O ReleaseFast bf_compiler.zig
-	rm -f bf_compiler.o
+	# zig build-exe -static bf_compiler.zig
+	# ^ will be removed in the future
+	zig build --summary all -p .
+
+	# rm -rf .zig-cache/
 
 clean:
-	rm -f *.o *.asm *.ir *.exe
-	rm -f bf_compiler
+	rm -rf *.o *.asm *.ir *.exe .zig-cache/ zig-out/
+
+clean_all:
+	rm -rf *.o *.asm *.ir *.exe .zig-cache/ zig-out/
+	rm -rf bin/
